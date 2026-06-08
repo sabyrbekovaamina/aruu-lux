@@ -487,7 +487,7 @@
 
       .categoryCard {
         .categoryImg {
-          height: 55vh;
+          height: 90vh;
         }
 
         .categoryContent {
@@ -500,10 +500,6 @@
           }
         }
       }
-    }
-
-    .featured {
-      padding: 120px 30px;
     }
 
     .about {
@@ -820,22 +816,21 @@
     .categories {
       .categoryCard {
         .categoryImg {
-          height: 42vh;
+          height: 80vh;
         }
 
         .categoryContent {
           left: 10px;
-          bottom: 12px;
 
           .categoryNameEn,
           .categoryNameRu {
-            font-size: 20px;
+            font-size: 30px;
             letter-spacing: 1px;
           }
 
           .categoryLabel,
           .categoryBtn {
-            font-size: 7px;
+            font-size: 8px;
           }
         }
       }
