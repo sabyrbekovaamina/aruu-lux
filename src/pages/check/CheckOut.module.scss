@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Kalnia:wght@300;400&family=Tenor+Sans&display=swap");
+
+.checkout {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: #faf5ec;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  /* ── Форма ── */
+  .form {
+    padding: 80px 64px;
+    border-right: 0.5px solid rgba(201, 168, 76, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .label {
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      color: #c9a84c;
+      margin-bottom: 12px;
+    }
+
+    .title {
+      font-family: "Kalnia", serif;
+      font-size: 42px;
+      font-weight: 300;
+      color: #2c1a0e;
+      letter-spacing: 3px;
+      margin-bottom: 0;
+    }
+
+    .line {
+      width: 60px;
+      height: 0.5px;
+      background: #c9a84c;
+      margin: 24px 0 40px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+
+      .fieldLabel {
+        font-family: "Cinzel", serif;
+        font-size: 9px;
+        letter-spacing: 4px;
+        color: #8b6010;
+        text-transform: uppercase;
+      }
+
+      .input {
+        padding: 12px 0;
+        background: transparent;
+        border: none;
+        border-bottom: 0.5px solid #c9a84c;
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 14px;
+        color: #2c1a0e;
+        outline: none;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: #2c1a0e;
+        }
+
+        &::placeholder {
+          color: #c9a84c;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .orderBtn {
+      padding: 16px;
+      background: #2c1a0e;
+      color: #faf5ec;
+      font-family: "Cinzel", serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-bottom: 16px;
+
+      &:hover {
+        background: #8b6010;
+      }
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    .backBtn {
+      background: transparent;
+      border: none;
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #c9a84c;
+      cursor: pointer;
+      padding: 0;
+      text-align: left;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  /* ── Список заказа ── */
+  .order {
+    padding: 80px 64px;
+    background: #f5eedd;
+
+    .orderLabel {
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      color: #c9a84c;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    .empty {
+      font-family: "Tenor Sans", sans-serif;
+      font-size: 13px;
+      color: #c9a84c;
+      letter-spacing: 2px;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 0.5px solid rgba(201, 168, 76, 0.2);
+
+      .itemImg {
+        width: 72px;
+        height: 96px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .itemInfo {
+        flex: 1;
+
+        .itemName {
+          font-family: "Kalnia", serif;
+          font-size: 16px;
+          font-weight: 300;
+          color: #2c1a0e;
+          margin-bottom: 4px;
+        }
+
+        .itemMeta {
+          font-family: "Tenor Sans", sans-serif;
+          font-size: 11px;
+          color: #8b7355;
+          letter-spacing: 1px;
+        }
+
+        .itemCount {
+          font-family: "Tenor Sans", sans-serif;
+          font-size: 12px;
+          color: #c9a84c;
+          margin-top: 4px;
+        }
+      }
+
+      .itemPrice {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 14px;
+        color: #8b6010;
+        flex-shrink: 0;
+      }
+
+      .removeBtn {
+        background: transparent;
+        border: none;
+        font-size: 20px;
+        color: #c9a84c;
+        cursor: pointer;
+        padding: 0 4px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #2c1a0e;
+        }
+      }
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 0;
+
+      .totalLabel {
+        font-family: "Cinzel", serif;
+        font-size: 11px;
+        letter-spacing: 5px;
+        color: #8b6010;
+      }
+
+      .totalPrice {
+        font-family: "Kalnia", serif;
+        font-size: 28px;
+        font-weight: 300;
+        color: #2c1a0e;
+      }
+    }
+  }
+}
+
+// ! ADAPTATION ! //
+
+/* ============ 1024px ============= */
+
+@media (max-width: 1024px) {
+  .checkout {
+    grid-template-columns: 1fr 1fr;
+
+    .form,
+    .order {
+      padding: 60px 40px;
+    }
+
+    .title {
+      font-size: 36px;
+    }
+
+    .itemName {
+      font-size: 15px;
+    }
+
+    .totalPrice {
+      font-size: 24px;
+    }
+  }
+}
+
+/* ============ 768px ============= */
+
+@media (max-width: 768px) {
+  .checkout {
+    grid-template-columns: 1fr;
+  }
+
+  .form {
+    padding: 40px 20px;
+    border-right: none;
+    border-bottom: 0.5px solid rgba(201, 168, 76, 0.2);
+  }
+
+  .order {
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .item {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .itemName {
+    font-size: 15px;
+  }
+
+  .itemPrice {
+    font-size: 13px;
+  }
+}
+
+/* ============ 480px ============= */
+
+@media (max-width: 480px) {
+  .checkout {
+    .form,
+    .order {
+      padding: 28px 16px;
+    }
+
+    .title {
+      font-size: 26px;
+    }
+
+    .label,
+    .orderLabel {
+      font-size: 8px;
+      letter-spacing: 3px;
+    }
+
+    .item {
+      align-items: flex-start;
+    }
+
+    .itemName {
+      font-size: 14px;
+    }
+
+    .itemPrice {
+      font-size: 12px;
+    }
+
+    .totalPrice {
+      font-size: 22px;
+    }
+  }
+}
+
+/* ============ 430px ============= */
+
+@media (max-width: 430px) {
+  .checkout {
+    .form,
+    .order {
+      padding: 24px 14px;
+    }
+
+    .title {
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    .label,
+    .orderLabel {
+      font-size: 8px;
+      letter-spacing: 3px;
+    }
+
+    .item {
+      gap: 10px;
+    }
+
+    .itemName {
+      font-size: 14px;
+    }
+
+    .itemPrice {
+      font-size: 12px;
+    }
+
+    .totalPrice {
+      font-size: 22px;
+    }
+  }
+}
+
+/* ============ 375px ============= */
+
+@media (max-width: 375px) {
+  .checkout {
+    .form,
+    .order {
+      padding: 22px 12px;
+    }
+
+    .title {
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+
+    .input {
+      font-size: 13px;
+    }
+
+    .itemName {
+      font-size: 13px;
+    }
+
+    .itemMeta {
+      font-size: 10px;
+    }
+
+    .itemPrice {
+      font-size: 11px;
+    }
+
+    .totalPrice {
+      font-size: 20px;
+    }
+
+    .orderBtn {
+      font-size: 10px;
+    }
+  }
+}

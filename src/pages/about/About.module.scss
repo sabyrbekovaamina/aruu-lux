@@ -1,0 +1,526 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Kalnia:wght@300;400&family=Tenor+Sans&display=swap");
+
+.about {
+  background: #faf5ec;
+  padding-top: 75px;
+
+  /* ── Hero ── */
+  .hero {
+    height: 60vh;
+    background: linear-gradient(160deg, #f4c8b8 0%, #c46c56 60%, #6e2615 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .heroContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .label {
+        font-family: "Cinzel", serif;
+        font-size: 10px;
+        letter-spacing: 6px;
+        color: rgba(255, 220, 190, 0.7);
+        margin-bottom: 16px;
+      }
+
+      .title {
+        font-family: "Kalnia", serif;
+        font-size: clamp(48px, 8vw, 96px);
+        font-weight: 300;
+        color: #fff5ee;
+        letter-spacing: 6px;
+        line-height: 1;
+        margin-bottom: 0;
+      }
+
+      .line {
+        width: 80px;
+        height: 0.5px;
+        background: rgba(255, 200, 160, 0.5);
+        margin: 24px 0;
+      }
+
+      .subtitle {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 12px;
+        letter-spacing: 5px;
+        color: rgba(255, 220, 190, 0.65);
+      }
+    }
+  }
+
+  /* ── История ── */
+  .story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding: 100px 80px;
+    align-items: center;
+
+    .storyText {
+      .storyLabel {
+        font-family: "Cinzel", serif;
+        font-size: 10px;
+        letter-spacing: 5px;
+        color: #c9a84c;
+        margin-bottom: 16px;
+      }
+
+      .storyTitle {
+        font-family: "Kalnia", serif;
+        font-size: 42px;
+        font-weight: 300;
+        color: #2c1a0e;
+        letter-spacing: 2px;
+        margin-bottom: 28px;
+      }
+
+      .storyBody {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 14px;
+        line-height: 2.2;
+        color: #8b7355;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .storyImage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .imagePlaceholder {
+        max-width: 500px;
+        width: 100%;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        /* золотая рамка */
+        &::before {
+          content: "";
+          position: absolute;
+          top: -16px;
+          left: -16px;
+          right: 16px;
+          bottom: 16px;
+          border: 0.5px solid #c9a84c;
+          pointer-events: none;
+        }
+
+        span {
+          font-family: "Cinzel", serif;
+          font-size: 12px;
+          letter-spacing: 6px;
+          color: #c9a84c;
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+
+  /* ── Философия ── */
+  .philosophy {
+    padding: 100px 80px;
+    background: #2c1a0e;
+    text-align: center;
+
+    .philosophyLabel {
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      color: #c9a84c;
+      margin-bottom: 32px;
+    }
+
+    .philosophyQuote {
+      font-family: "Kalnia", serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 300;
+      font-style: italic;
+      color: #fff5ee;
+      max-width: 800px;
+      margin: 0 auto 28px;
+      line-height: 1.5;
+    }
+
+    .philosophyText {
+      font-family: "Tenor Sans", sans-serif;
+      font-size: 14px;
+      line-height: 2;
+      color: rgba(255, 235, 210, 0.55);
+      max-width: 500px;
+      margin: 0 auto;
+      letter-spacing: 1px;
+    }
+  }
+
+  /* ── Ценности ── */
+  .values {
+    padding: 100px 80px;
+    background: #faf5ec;
+    text-align: center;
+
+    .valuesLabel {
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      color: #c9a84c;
+      margin-bottom: 60px;
+    }
+
+    .valuesGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+
+    .valueCard {
+      .valueNum {
+        font-family: "Cinzel", serif;
+        font-size: 11px;
+        letter-spacing: 4px;
+        color: #c9a84c;
+        margin-bottom: 16px;
+      }
+
+      .valueName {
+        font-family: "Kalnia", serif;
+        font-size: 28px;
+        font-weight: 300;
+        color: #2c1a0e;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+      }
+
+      .valueText {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 13px;
+        line-height: 2;
+        color: #8b7355;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  /* ── CTA ── */
+  .cta {
+    padding: 100px 80px;
+    background: #faf5ec;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    .ctaTitle {
+      font-family: "Kalnia", serif;
+      font-size: 42px;
+      font-weight: 300;
+      color: #2c1a0e;
+      letter-spacing: 3px;
+    }
+
+    .ctaBtn {
+      padding: 16px 48px;
+      background: #2c1a0e;
+      color: #faf5ec;
+      font-family: "Cinzel", serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #8b6010;
+      }
+    }
+  }
+}
+
+// ! ADAPTATION ! //
+
+/* ================= 1024 ================= */
+
+@media (max-width: 1024px) {
+  .about {
+    .hero {
+      padding-bottom: 40px;
+    }
+    .story,
+    .philosophy,
+    .values,
+    .cta {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .story {
+      gap: 50px;
+
+      .storyText {
+        .storyTitle {
+          font-size: 36px;
+        }
+      }
+    }
+
+    .values {
+      .valuesGrid {
+        gap: 30px;
+      }
+    }
+  }
+}
+
+/* ================= 768 ================= */
+
+@media (max-width: 768px) {
+  .about {
+    padding-top: 70px;
+
+    .hero {
+      height: 50vh;
+
+      .heroContent {
+        .title {
+          font-size: clamp(36px, 8vw, 60px);
+          letter-spacing: 4px;
+        }
+      }
+    }
+
+    .story {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 70px 30px;
+
+      .storyText {
+        .storyTitle {
+          font-size: 32px;
+        }
+      }
+    }
+
+    .philosophy {
+      padding: 70px 30px;
+    }
+
+    .values {
+      padding: 70px 30px;
+
+      .valuesGrid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .cta {
+      padding: 70px 30px;
+
+      .ctaTitle {
+        font-size: 34px;
+      }
+    }
+  }
+}
+
+/* ================= 480 ================= */
+
+@media (max-width: 480px) {
+  .about {
+    padding-top: 66px;
+
+    .hero {
+      height: 45vh;
+
+      .heroContent {
+        .label {
+          font-size: 9px;
+          letter-spacing: 4px;
+        }
+
+        .title {
+          font-size: 32px;
+          letter-spacing: 3px;
+        }
+
+        .subtitle {
+          font-size: 10px;
+          letter-spacing: 3px;
+        }
+      }
+    }
+
+    .story {
+      padding: 60px 20px;
+
+      .storyText {
+        .storyTitle {
+          font-size: 28px;
+        }
+
+        .storyBody {
+          font-size: 13px;
+          line-height: 2;
+        }
+      }
+    }
+
+    .philosophy {
+      padding: 60px 20px;
+
+      .philosophyQuote {
+        font-size: 28px;
+      }
+
+      .philosophyText {
+        font-size: 13px;
+      }
+    }
+
+    .values {
+      padding: 60px 20px;
+
+      .valueCard {
+        .valueName {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .cta {
+      padding: 60px 20px;
+
+      .ctaTitle {
+        font-size: 28px;
+      }
+
+      .ctaBtn {
+        padding: 14px 36px;
+      }
+    }
+  }
+}
+
+/* ================= 430 ================= */
+
+@media (max-width: 430px) {
+  .about {
+    padding-top: 60px;
+
+    .hero {
+      height: 40vh;
+
+      .heroContent {
+        .title {
+          font-size: 28px;
+          letter-spacing: 2px;
+        }
+
+        .line {
+          width: 60px;
+        }
+      }
+    }
+
+    .story {
+      padding: 50px 14px;
+    }
+
+    .philosophy,
+    .values,
+    .cta {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+
+    .philosophy {
+      .philosophyQuote {
+        font-size: 24px;
+      }
+    }
+
+    .cta {
+      .ctaTitle {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+/* ================= 375 ================= */
+
+@media (max-width: 375px) {
+  .about {
+    padding-top: 56px;
+    .hero {
+      .heroContent {
+        .label {
+          font-size: 8px;
+          letter-spacing: 3px;
+        }
+
+        .title {
+          font-size: 24px;
+        }
+
+        .subtitle {
+          font-size: 8px;
+          letter-spacing: 2px;
+        }
+      }
+    }
+
+    .story {
+      padding: 45px 12px;
+
+      .storyText {
+        .storyTitle {
+          font-size: 24px;
+        }
+
+        .storyBody {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .philosophy,
+    .values,
+    .cta {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .valueCard {
+      .valueName {
+        font-size: 22px;
+      }
+
+      .valueText {
+        font-size: 12px;
+      }
+    }
+
+    .cta {
+      .ctaTitle {
+        font-size: 22px;
+      }
+
+      .ctaBtn {
+        width: 100%;
+        max-width: 260px;
+      }
+    }
+  }
+}

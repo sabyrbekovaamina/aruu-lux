@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&family=Kalnia:wght@300;400&family=Cinzel:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500&display=swap");
+
+.header {
+  background: linear-gradient(175deg, #f1ad9baf, #933015af);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+}
+
+.header2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 75px;
+}
+
+.logo h1 {
+  display: flex;
+  align-items: baseline;
+}
+
+.logo .A {
+  font-family: "Cinzel Decorative";
+  font-weight: 400;
+  font-size: 55px;
+  color: rgba(67, 1, 1, 0.81);
+}
+
+.logo .RUU {
+  font-family: "Kalnia";
+  font-weight: 300;
+  font-size: 35px;
+  background: linear-gradient(180deg, #430101, #bc351a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu_icon {
+  display: flex;
+  gap: 200px;
+}
+
+.nav {
+  display: flex;
+  gap: 45px;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.navEn {
+  font-family: "Cinzel", serif;
+  font-size: 16px;
+  color: rgba(67, 1, 1, 0.95);
+}
+
+.navRu {
+  font-family: "Cormorant", serif;
+  font-size: 22px;
+  font-weight: 100;
+  color: rgba(67, 1, 1, 0.95);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  .icon {
+    font-size: 25px;
+    color: #5d0404;
+  }
+  .logoutBtn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+}
+.langBtn {
+  font-size: 16px;
+  padding: 6px 10px;
+  border: none;
+  background: transparent;
+  color: #5d0404;
+}
+
+.burger {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #5d0404;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+}
+
+// ! ADAPTATION ! //
+
+/* ================= 1024 ================= */
+
+@media (max-width: 1024px) {
+  .header2 {
+    padding: 0 50px;
+  }
+
+  .menu_icon {
+    display: flex;
+    gap: 100px;
+  }
+
+  .menu {
+    gap: 70px;
+  }
+
+  .nav {
+    gap: 30px;
+  }
+
+  .navEn {
+    font-size: 14px;
+  }
+
+  .navRu {
+    font-size: 18px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .langBtn {
+    font-size: 14px;
+  }
+}
+
+/* ================= 768 ================= */
+
+@media (max-width: 768px) {
+  .header2 {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .burger {
+    display: block;
+  }
+  .menu_icon {
+    display: flex;
+    gap: 20px;
+    flex-direction: row-reverse;
+    .burger {
+      padding-bottom: 5px;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    // left: 515px;
+    width: 260px;
+    background: rgba(242, 208, 189, 0.876);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+    align-items: flex-start;
+    padding: 25px 20px;
+    gap: 20px;
+
+    transform: translateX(100%);
+    transition: 0.4s ease;
+    border-radius: 8px;
+  }
+
+  .menu.active {
+    transform: translateX(0);
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .logo .A {
+    font-size: 45px;
+  }
+
+  .logo .RUU {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header2 {
+    padding: 0 16px;
+    height: 66px;
+  }
+
+  .logo .A {
+    font-size: 43px;
+  }
+
+  .logo .RUU {
+    font-size: 27px;
+  }
+
+  .menu {
+    width: 220px;
+    top: 66px;
+    padding: 20px 16px;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .icons {
+    display: flex;
+    gap: 18px;
+    .icon {
+      display: flex;
+      align-items: center;
+      font-size: 22px;
+    }
+  }
+
+  .langBtn {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+}
+
+/* ================= 430 ================= */
+
+@media (max-width: 430px) {
+  .header2 {
+    padding: 0 14px;
+    height: 60px;
+    align-items: center;
+  }
+
+  .logo .A {
+    font-size: 38px;
+  }
+
+  .logo .RUU {
+    font-size: 22px;
+  }
+
+  .burger {
+    padding-top: 0;
+  }
+
+  .icons {
+    display: flex;
+    gap: 12px;
+    .icon {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+/* ============ 375px ============= */
+
+@media (max-width: 375px) {
+  .header2 {
+    padding: 0 10px;
+    height: 56px;
+  }
+
+  .logo .A {
+    font-size: 34px;
+  }
+
+  .logo .RUU {
+    font-size: 20px;
+  }
+
+  .menu {
+    width: 190px;
+    top: 56px;
+    padding: 16px 12px;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .navEn {
+    font-size: 12px;
+  }
+
+  .navRu {
+    font-size: 16px;
+  }
+
+  .icons {
+    gap: 8px;
+
+    .icon {
+      font-size: 18px;
+    }
+  }
+
+  .langBtn {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+
+  .burger {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,880 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap");
+
+.home {
+  padding-top: 75px;
+  background: #faf5ec;
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 750px;
+    padding-top: 250px;
+    overflow: hidden;
+    cursor: pointer;
+
+    .video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(20, 5, 5, 0.55) 100%
+      );
+      z-index: 1;
+    }
+
+    .heroContent {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+
+      .tag {
+        font-family: "Cinzel", serif;
+        font-size: 11px;
+        letter-spacing: 7px;
+        color: rgba(255, 228, 204, 0.85);
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        animation: fadeIn 1s ease 0.4s both;
+      }
+
+      .title {
+        font-family: "Kalnia", serif;
+        font-size: clamp(54px, 9vw, 110px);
+        font-weight: 300;
+        color: #f7d6d0;
+        letter-spacing: 8px;
+        line-height: 1;
+        animation: fadeUp 1s ease 0.7s both;
+      }
+
+      .line {
+        width: 0;
+        height: 1px;
+        background: rgba(255, 220, 190, 0.5);
+        margin: 28px 0;
+        animation: drawLine 1s ease 1s forwards;
+      }
+
+      .subtitle {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 12px;
+        letter-spacing: 5px;
+        color: rgba(255, 230, 210, 0.7);
+        text-transform: uppercase;
+        animation: fadeIn 1s ease 1.3s both;
+      }
+    }
+  }
+
+  /* ── NEW ARRIVALS ── */
+  .newArrivals {
+    padding: 100px 80px;
+    background: #faf5ec;
+
+    .sectionHeader {
+      text-align: center;
+      margin-bottom: 64px;
+
+      .titleEn {
+        font-family: "Cinzel", serif;
+        font-size: 32px;
+        letter-spacing: 8px;
+        color: #b8914f;
+        text-transform: uppercase;
+      }
+
+      .titleRu {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 42px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        color: #b8914f;
+      }
+    }
+
+    .emptyBlock {
+      padding: 80px 0;
+      text-align: center;
+
+      .emptyText {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 14px;
+        letter-spacing: 3px;
+        color: #b8914f;
+        text-transform: uppercase;
+      }
+    }
+
+    .productsGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .productCard {
+      cursor: pointer;
+      transition: transform 0.4s ease;
+
+      &:hover {
+        transform: translateY(-6px);
+      }
+
+      &:hover .productImg img {
+        transform: scale(1.05);
+      }
+
+      .productImg {
+        width: 100%;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        background: #efe3d0;
+        margin-bottom: 18px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.8s ease;
+        }
+
+        .placeholder {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .placeholderText {
+            font-family: "Cinzel", serif;
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: #b8914f;
+            opacity: 0.5;
+          }
+        }
+      }
+
+      .productInfo {
+        .productCategory {
+          font-family: "Cinzel", serif;
+          font-size: 10px;
+          letter-spacing: 4px;
+          color: #b8914f;
+          margin-bottom: 8px;
+          text-transform: uppercase;
+        }
+
+        .productName {
+          font-family: "Kalnia", serif;
+          font-size: 22px;
+          font-weight: 300;
+          color: #2c1a0e;
+          margin-bottom: 8px;
+          line-height: 1.3;
+        }
+
+        .productPrice {
+          font-family: "Tenor Sans", sans-serif;
+          font-size: 14px;
+          color: #8b6010;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  /* ── CATEGORIES ── */
+  .categories {
+    display: flex;
+    flex-direction: column; /* одна под другой */
+    gap: 15px;
+
+    .categoryCard {
+      position: relative;
+      overflow: hidden;
+      object-fit: cover;
+      cursor: pointer;
+      width: 100%;
+
+      &:hover .categoryImg {
+        transform: scale(1.03);
+      }
+
+      .categoryImg {
+        width: 100%;
+        height: 90vh; /* каждый плакат на весь экран */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        transition: transform 0.8s ease;
+
+        .categoryOverlay {
+          position: absolute;
+          inset: 0;
+          background: transparent;
+          background-color: #43150737;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 60%;
+          background: linear-gradient(
+            to bottom,
+            transparent,
+            rgba(30, 10, 5, 0.65)
+          );
+        }
+      }
+
+      .categoryContent {
+        position: absolute;
+        bottom: 80px;
+        left: 100px;
+        z-index: 2;
+
+        .categoryLabel {
+          font-family: "Cinzel", serif;
+          font-size: 15px;
+          letter-spacing: 5px;
+          color: rgba(255, 220, 190, 0.6);
+          margin-bottom: 12px;
+        }
+
+        .categoryNameEn {
+          font-family: "Kalnia", serif;
+          font-weight: 300;
+          font-size: 100px;
+          color: #fff5ee;
+          margin-bottom: 20px;
+        }
+
+        .categoryNameRu {
+          font-family: "Cormorant Garamond", serif;
+          font-weight: 300;
+          font-size: 100px;
+          letter-spacing: 6px;
+          color: #fff5ee;
+          margin-bottom: 20px;
+        }
+
+        .categoryBtn {
+          font-family: "Cinzel", serif;
+          font-size: 12px;
+          letter-spacing: 5px;
+          color: #d59649;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  /* ── FEATURED ── */
+  .featured {
+    position: relative;
+    padding: 175px 20px;
+    bottom: 10px;
+    background: linear-gradient(
+      160deg,
+      #712a1df1 0%,
+      #cb8675d4 50%,
+      #712c1df1 100%
+    );
+    overflow: hidden;
+
+    .featuredOverlay {
+      position: absolute;
+      inset: 0;
+      opacity: 0.15;
+      background: radial-gradient(circle, #f3eaea 0%, transparent 70%);
+    }
+
+    .featuredContent {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+
+      .featuredLabel {
+        font-family: "Cinzel", serif;
+        font-size: 11px;
+        letter-spacing: 6px;
+        color: rgba(255, 210, 190, 0.7);
+        margin-bottom: 32px;
+        text-transform: uppercase;
+      }
+
+      .featuredTitle {
+        font-family: "Kalnia", serif;
+        font-size: clamp(36px, 5vw, 64px);
+        font-weight: 300;
+        line-height: 1.2;
+        color: #fff5ee;
+        margin-bottom: 24px;
+      }
+
+      .featuredText {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 14px;
+        line-height: 2;
+        letter-spacing: 1px;
+        color: rgba(255, 235, 220, 0.75);
+        max-width: 540px;
+        margin: 0 auto 40px;
+      }
+
+      .featuredBtn {
+        padding: 14px 40px;
+        background: transparent;
+        border: none;
+        border-bottom: 0.8px solid rgba(255, 200, 170, 0.7);
+        color: #fff5ee;
+        font-family: "Cinzel", serif;
+        font-size: 10px;
+        letter-spacing: 5px;
+        cursor: pointer;
+        transition:
+          letter-spacing 0.3s ease,
+          opacity 0.3s ease;
+
+        &:hover {
+          letter-spacing: 7px;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    padding: 120px 20px;
+    background: #faf5ec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .aboutLabel {
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      color: #c9a84c;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .aboutQuote {
+      font-family: "Kalnia", serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.5;
+      color: #2c1a0e;
+      max-width: 800px;
+      margin-bottom: 28px;
+    }
+
+    .aboutText {
+      font-family: "Tenor Sans", sans-serif;
+      font-size: 14px;
+      line-height: 2;
+      letter-spacing: 1px;
+      color: #8b7355;
+      max-width: 580px;
+      margin-bottom: 40px;
+    }
+
+    .aboutBtn {
+      padding: 14px 40px;
+      background: transparent;
+      border: 0.5px solid #2c1a0e;
+      color: #2c1a0e;
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+      &:hover {
+        background: #2c1a0e;
+        color: #faf5ec;
+      }
+    }
+  }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes drawLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 180px;
+  }
+}
+
+// ! ADAPTATION ! //
+
+/* ============ 1024px ============= */
+
+@media (max-width: 1024px) {
+  .home {
+    padding-top: 75px;
+    .hero {
+      min-height: 50vh;
+
+      .heroContent {
+        .title {
+          font-size: clamp(48px, 8vw, 80px);
+        }
+      }
+    }
+
+    .newArrivals {
+      padding: 80px 40px;
+
+      .productsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+
+    .categories {
+      gap: 15px;
+
+      .categoryCard {
+        .categoryImg {
+          height: 55vh;
+        }
+
+        .categoryContent {
+          left: 40px;
+          bottom: 40px;
+
+          .categoryNameEn,
+          .categoryNameRu {
+            font-size: 70px;
+          }
+        }
+      }
+    }
+
+    .featured {
+      padding: 120px 30px;
+    }
+
+    .about {
+      padding: 100px 30px;
+    }
+  }
+}
+
+/* ============ 768px ============= */
+
+@media (max-width: 768px) {
+  .home {
+    padding-top: 70px;
+    .hero {
+      min-height: 86vh;
+
+      .heroContent {
+        .title {
+          font-size: clamp(34px, 10vw, 58px);
+          letter-spacing: 4px;
+        }
+
+        .tag {
+          font-size: 10px;
+          letter-spacing: 5px;
+        }
+
+        .subtitle {
+          font-size: 10px;
+          letter-spacing: 3px;
+        }
+
+        .line {
+          margin: 20px 0;
+        }
+      }
+    }
+
+    /* NEW ARRIVALS */
+
+    .newArrivals {
+      padding: 65px 30px;
+
+      .sectionHeader {
+        margin-bottom: 40px;
+
+        .titleEn {
+          font-size: 24px;
+          letter-spacing: 5px;
+        }
+
+        .titleRu {
+          font-size: 30px;
+        }
+      }
+
+      .productsGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .productCard {
+        .productInfo {
+          .productName {
+            font-size: 18px;
+          }
+
+          .productPrice {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      gap: 12px;
+
+      .categoryCard {
+        .categoryImg {
+          height: 65vh;
+        }
+
+        .categoryContent {
+          left: 20px;
+          bottom: 24px;
+
+          .categoryNameEn,
+          .categoryNameRu {
+            font-size: clamp(34px, 8vw, 50px);
+            letter-spacing: 3px;
+          }
+
+          .categoryLabel {
+            font-size: 9px;
+          }
+
+          .categoryBtn {
+            font-size: 9px;
+          }
+        }
+      }
+    }
+
+    /* FEATURED */
+
+    .featured {
+      .featuredContent {
+        .featuredTitle {
+          font-size: clamp(38px, 7vw, 42px);
+        }
+
+        .featuredText {
+          font-size: 13px;
+          line-height: 1.8;
+        }
+
+        .featuredBtn {
+          padding: 12px 24px;
+        }
+      }
+    }
+
+    /* ABOUT */
+
+    .about {
+      padding: 80px 16px;
+
+      .aboutQuote {
+        font-size: clamp(22px, 6vw, 34px);
+      }
+
+      .aboutText {
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .aboutBtn {
+        padding: 12px 24px;
+      }
+    }
+  }
+}
+
+/* ============ 480px ============= */
+
+@media (max-width: 480px) {
+  .home {
+    padding-top: 66px;
+    .hero {
+      min-height: 73vh;
+      padding-top: 150px;
+
+      .heroContent {
+        .title {
+          font-size: 30px;
+          letter-spacing: 3px;
+        }
+
+        .subtitle {
+          font-size: 9px;
+        }
+      }
+    }
+
+    .categories {
+      .categoryCard {
+        .categoryImg {
+          height: 52vh;
+        }
+
+        .categoryContent {
+          left: 14px;
+          bottom: 18px;
+
+          .categoryNameEn,
+          .categoryNameRu {
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ============ 375px ============= */
+
+@media (max-width: 430px) {
+  .home {
+    padding-top: 60px;
+    .hero {
+      padding-top: 100px;
+      min-height: 50vh;
+
+      .heroContent {
+        padding: 0 14px;
+
+        .tag {
+          font-size: 9px;
+          letter-spacing: 4px;
+          margin-bottom: 12px;
+        }
+
+        .title {
+          font-size: 28px;
+          letter-spacing: 2px;
+          line-height: 1.1;
+        }
+
+        .line {
+          margin: 16px 0;
+        }
+
+        .subtitle {
+          font-size: 8px;
+          letter-spacing: 2px;
+        }
+      }
+    }
+
+    .newArrivals {
+      padding: 50px 12px;
+    }
+
+    .categories {
+      gap: 10px;
+
+      .categoryCard {
+        .categoryImg {
+          height: 48vh;
+        }
+
+        .categoryContent {
+          left: 12px;
+          bottom: 14px;
+
+          .categoryNameEn,
+          .categoryNameRu {
+            font-size: 24px;
+            letter-spacing: 2px;
+            white-space: nowrap;
+          }
+
+          .categoryLabel {
+            font-size: 8px;
+          }
+
+          .categoryBtn {
+            font-size: 8px;
+          }
+        }
+      }
+    }
+
+    .featured {
+      padding: 70px 12px;
+
+      .featuredContent {
+        .featuredTitle {
+          font-size: clamp(22px, 6vw, 24px);
+        }
+
+        .featuredText {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .about {
+      padding: 60px 12px;
+
+      .aboutQuote {
+        font-size: 20px;
+      }
+
+      .aboutText {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+/* ============ 3px ============= */
+
+@media (max-width: 375px) {
+  .home {
+    padding-top: 56px;
+
+    .hero {
+      min-height: 45vh;
+      padding-top: 90px;
+
+      .heroContent {
+        padding: 0 10px;
+
+        .tag {
+          font-size: 8px;
+          letter-spacing: 3px;
+        }
+
+        .title {
+          font-size: 24px;
+          letter-spacing: 1px;
+        }
+
+        .subtitle {
+          font-size: 7px;
+          letter-spacing: 1px;
+        }
+
+        .line {
+          margin: 12px 0;
+        }
+      }
+    }
+
+    .newArrivals {
+      padding: 40px 10px;
+    }
+
+    .categories {
+      .categoryCard {
+        .categoryImg {
+          height: 42vh;
+        }
+
+        .categoryContent {
+          left: 10px;
+          bottom: 12px;
+
+          .categoryNameEn,
+          .categoryNameRu {
+            font-size: 20px;
+            letter-spacing: 1px;
+          }
+
+          .categoryLabel,
+          .categoryBtn {
+            font-size: 7px;
+          }
+        }
+      }
+    }
+
+    .featured {
+      padding: 60px 10px;
+
+      .featuredContent {
+        .featuredTitle {
+          font-size: 20px;
+        }
+
+        .featuredText {
+          font-size: 11px;
+        }
+      }
+    }
+
+    .about {
+      padding: 50px 10px;
+
+      .aboutQuote {
+        font-size: 18px;
+      }
+
+      .aboutText {
+        font-size: 11px;
+      }
+    }
+  }
+}

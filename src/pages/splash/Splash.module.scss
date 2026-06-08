@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&family=Kalnia:wght@300;400&family=Tenor+Sans&family=Cinzel:wght@400&display=swap");
+
+/* ── Анимации ── */
+
+/* Появление снизу вверх — для букв */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Просто появление — для текста */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Линия рисуется слева направо */
+@keyframes drawLine {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 200px;
+  }
+}
+
+/* Плавное покачивание — работает всё время */
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ── Страница ── */
+.splash {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    165deg,
+    #f5bfb9eb 8%,
+    #dc9885 38%,
+    #d9735a 70%,
+    #a3462f 100%
+  );
+  cursor: pointer;
+  position: relative;
+
+  /* Весь контент покачивается */
+  .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: floating 4s ease-in-out infinite;
+
+    .logo {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 16px;
+
+      .letterA {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 200px;
+        font-weight: 400;
+        color: rgba(67, 1, 1, 0.81);
+        margin-right: 0; /* убери margin */
+        line-height: 1;
+        opacity: 0;
+
+        &.show {
+          animation: fadeUp 0.8s ease forwards;
+        }
+      }
+
+      .letterRuu {
+        font-family: "Kalnia", serif;
+        font-size: 120px; /* чуть меньше A */
+        font-weight: 300;
+        background: linear-gradient(180deg, #430101 0%, #bc351a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 4px;
+        line-height: 1;
+        opacity: 0;
+
+        &.show {
+          animation: fadeUp 0.8s ease forwards;
+        }
+      }
+    }
+
+    /* Линия */
+    .line {
+      width: 0px; /* начинает с нуля */
+      height: 1px;
+      background-color: rgba(67, 1, 1, 0.4);
+      margin-bottom: 14px;
+      margin-top: 50px;
+      padding: 0;
+
+      &.show {
+        animation: drawLine 0.8s ease forwards;
+      }
+    }
+
+    /* MODEST LUXURY — Tenor Sans */
+    .modest {
+      font-family: "Tenor Sans", sans-serif;
+      font-size: 13px;
+      letter-spacing: 6px;
+      color: rgba(67, 1, 1, 0.75);
+      opacity: 0; /* скрыт по умолчанию */
+      padding: 0;
+
+      &.show {
+        animation: fadeIn 0.8s ease forwards;
+      }
+    }
+  }
+
+  /* WEAR YOUR LIGHT — внизу страницы */
+  .tagline {
+    font-family: "Cinzel";
+    font-size: 16px;
+    position: absolute;
+    bottom: 55px;
+    padding: 0;
+    font-weight: 1000;
+    background: linear-gradient(180deg, #360d03 0%, #ef490df4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 4px;
+    opacity: 0; /* скрыт по умолчанию */
+
+    &.show {
+      animation: fadeIn 0.8s ease forwards;
+    }
+  }
+}

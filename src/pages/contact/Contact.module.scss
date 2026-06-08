@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Kalnia:wght@300;400&family=Tenor+Sans&display=swap");
+
+.contact {
+  background: #faf5ec;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+
+  /* ── Hero ── */
+  .hero {
+    padding: 80px 80px 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 0.5px solid rgba(201, 168, 76, 0.2);
+
+    .label {
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      color: #c9a84c;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-family: "Kalnia", serif;
+      font-size: clamp(42px, 7vw, 80px);
+      font-weight: 300;
+      color: #2c1a0e;
+      letter-spacing: 5px;
+      margin-bottom: 0;
+    }
+
+    .line {
+      width: 60px;
+      height: 0.5px;
+      background: #c9a84c;
+      margin: 24px 0;
+    }
+
+    .subtitle {
+      font-family: "Tenor Sans", sans-serif;
+      font-size: 13px;
+      letter-spacing: 4px;
+      color: #8b7355;
+    }
+  }
+
+  /* ── Контент ── */
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 70vh;
+
+    /* Левая часть */
+    .infoBlock {
+      padding: 80px;
+      background: #f5eedd;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      justify-content: center;
+
+      .infoItem {
+        .infoLabel {
+          font-family: "Cinzel", serif;
+          font-size: 9px;
+          letter-spacing: 5px;
+          color: #c9a84c;
+          margin-bottom: 8px;
+          text-transform: uppercase;
+        }
+
+        .infoText {
+          font-family: "Tenor Sans", sans-serif;
+          font-size: 15px;
+          color: #2c1a0e;
+          letter-spacing: 1px;
+        }
+      }
+
+      .socials {
+        .infoLabel {
+          font-family: "Cinzel", serif;
+          font-size: 9px;
+          letter-spacing: 5px;
+          color: #c9a84c;
+          margin-bottom: 12px;
+          text-transform: uppercase;
+        }
+
+        .socialLinks {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .social {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: 14px;
+            color: #8b6010;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+
+            &:hover {
+              color: #2c1a0e;
+            }
+          }
+        }
+      }
+    }
+
+    /* Правая часть — форма */
+    .formBlock {
+      padding: 80px;
+      display: flex;
+      align-items: center;
+
+      .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+
+        .field {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .fieldLabel {
+            font-family: "Cinzel", serif;
+            font-size: 9px;
+            letter-spacing: 4px;
+            color: #8b6010;
+            text-transform: uppercase;
+          }
+
+          .input,
+          .textarea {
+            padding: 14px 16px;
+            background: transparent;
+            border: none;
+            border-bottom: 0.5px solid #c9a84c;
+            font-family: "Tenor Sans", sans-serif;
+            font-size: 14px;
+            color: #2c1a0e;
+            outline: none;
+            transition: border-color 0.3s;
+
+            &:focus {
+              border-color: #2c1a0e;
+            }
+
+            &::placeholder {
+              color: #c9a84c;
+              opacity: 0.5;
+            }
+          }
+
+          .textarea {
+            resize: none;
+          }
+        }
+
+        .submitBtn {
+          padding: 16px;
+          background: #2c1a0e;
+          color: #faf5ec;
+          font-family: "Cinzel", serif;
+          font-size: 11px;
+          letter-spacing: 5px;
+          text-transform: uppercase;
+          border: none;
+          cursor: pointer;
+          transition: background 0.3s;
+
+          &:hover {
+            background: #8b6010;
+          }
+        }
+      }
+
+      .success {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+
+        .successTitle {
+          font-family: "Kalnia", serif;
+          font-size: 32px;
+          font-weight: 300;
+          color: #2c1a0e;
+          letter-spacing: 3px;
+        }
+
+        .successText {
+          font-family: "Tenor Sans", sans-serif;
+          font-size: 14px;
+          color: #8b7355;
+          line-height: 2;
+          letter-spacing: 1px;
+        }
+
+        .successBtn {
+          padding: 12px 32px;
+          background: transparent;
+          border: 0.5px solid #2c1a0e;
+          font-family: "Cinzel", serif;
+          font-size: 10px;
+          letter-spacing: 4px;
+          color: #2c1a0e;
+          cursor: pointer;
+          transition:
+            background 0.3s,
+            color 0.3s;
+
+          &:hover {
+            background: #2c1a0e;
+            color: #faf5ec;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ! ADAPTATION ! //
+
+/* ================= 1024 ================= */
+
+@media (max-width: 1024px) {
+  .contact {
+    .hero {
+      padding: 70px 40px 50px;
+    }
+
+    .content {
+      .infoBlock,
+      .formBlock {
+        padding: 60px 40px;
+      }
+    }
+  }
+}
+
+/* ================= 768 ================= */
+
+@media (max-width: 768px) {
+  .contact {
+    padding-top: 70px;
+
+    .hero {
+      padding: 60px 30px 40px;
+
+      .title {
+        font-size: clamp(34px, 8vw, 56px);
+        letter-spacing: 3px;
+      }
+
+      .subtitle {
+        font-size: 11px;
+        letter-spacing: 3px;
+      }
+    }
+
+    .content {
+      grid-template-columns: 1fr;
+
+      .infoBlock,
+      .formBlock {
+        padding: 50px 30px;
+      }
+    }
+  }
+}
+
+/* ================= 480 ================= */
+
+@media (max-width: 480px) {
+  .contact {
+    padding-top: 66px;
+    padding-bottom: 60px;
+
+    .hero {
+      padding: 50px 20px 35px;
+
+      .label {
+        font-size: 9px;
+        letter-spacing: 4px;
+      }
+
+      .title {
+        font-size: 32px;
+        letter-spacing: 2px;
+      }
+
+      .subtitle {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+    }
+
+    .content {
+      .infoBlock,
+      .formBlock {
+        padding: 40px 20px;
+      }
+
+      .infoBlock {
+        gap: 28px;
+      }
+
+      .formBlock {
+        .success {
+          .successTitle {
+            font-size: 26px;
+          }
+
+          .successText {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================= 430 ================= */
+
+@media (max-width: 430px) {
+  .contact {
+    padding-top: 60px;
+
+    .hero {
+      padding: 40px 14px 30px;
+
+      .title {
+        font-size: 28px;
+      }
+
+      .line {
+        margin: 18px 0;
+      }
+
+      .subtitle {
+        font-size: 9px;
+      }
+    }
+
+    .content {
+      .infoBlock,
+      .formBlock {
+        padding: 35px 14px;
+      }
+
+      .formBlock {
+        .form {
+          gap: 22px;
+        }
+      }
+    }
+  }
+}
+
+/* ================= 375 ================= */
+
+@media (max-width: 375px) {
+  .contact {
+    .hero {
+      padding: 35px 12px 25px;
+
+      .label {
+        font-size: 8px;
+        letter-spacing: 3px;
+      }
+
+      .title {
+        font-size: 24px;
+      }
+
+      .subtitle {
+        font-size: 8px;
+        letter-spacing: 2px;
+      }
+    }
+
+    .content {
+      .infoBlock,
+      .formBlock {
+        padding: 30px 12px;
+      }
+
+      .infoBlock {
+        .infoItem {
+          .infoText {
+            font-size: 13px;
+          }
+        }
+
+        .socials {
+          .socialLinks {
+            .social {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+
+      .formBlock {
+        .form {
+          .field {
+            .input,
+            .textarea {
+              font-size: 13px;
+              padding: 12px;
+            }
+          }
+
+          .submitBtn {
+            font-size: 10px;
+            letter-spacing: 3px;
+          }
+        }
+
+        .success {
+          .successTitle {
+            font-size: 22px;
+          }
+
+          .successText {
+            font-size: 12px;
+          }
+
+          .successBtn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

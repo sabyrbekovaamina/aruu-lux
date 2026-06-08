@@ -1,0 +1,661 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Kalnia:wght@300;400&family=Tenor+Sans&display=swap");
+
+.product {
+  min-height: 100vh;
+  padding-top: 75px;
+  background: #faf5ec;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  /* ── Фото ── */
+  .imageWrap {
+    position: sticky;
+    overflow: hidden;
+
+    .thumbs {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+
+      .thumb {
+        width: 72px;
+        height: 96px;
+        object-fit: cover;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        &.thumbActive {
+          opacity: 1;
+          outline: 1px solid #c9a84c;
+        }
+      }
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .placeholder {
+      width: 100%;
+      height: 100%;
+      background: #f0e4c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        font-family: "Cinzel", serif;
+        font-size: 14px;
+        letter-spacing: 6px;
+        color: #c9a84c;
+        opacity: 0.4;
+      }
+    }
+  }
+
+  /* ── Инфо ── */
+  .info {
+    padding: 80px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .category {
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 5px;
+      color: #c9a84c;
+      margin-bottom: 16px;
+    }
+
+    .name {
+      font-family: "Kalnia", serif;
+      font-size: 42px;
+      font-weight: 300;
+      color: #2c1a0e;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      font-family: "Tenor Sans", sans-serif;
+      font-size: 22px;
+      color: #8b6010;
+      letter-spacing: 2px;
+      margin-bottom: 32px;
+    }
+
+    .line {
+      width: 60px;
+      height: 0.5px;
+      background: #c9a84c;
+      margin-bottom: 32px;
+    }
+
+    .description {
+      font-family: "Tenor Sans", sans-serif;
+      font-size: 14px;
+      line-height: 2;
+      color: #8b7355;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    /* Размеры */
+    .sizesBlock {
+      margin-bottom: 40px;
+
+      .sizesLabel {
+        font-family: "Cinzel", serif;
+        font-size: 10px;
+        letter-spacing: 5px;
+        color: #8b6010;
+        margin-bottom: 14px;
+      }
+
+      .sizesGrid {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+
+        .sizeBtn {
+          padding: 10px 20px;
+          background: transparent;
+          border: 0.5px solid #c9a84c;
+          font-family: "Cinzel", serif;
+          font-size: 11px;
+          letter-spacing: 2px;
+          color: #8b6010;
+          cursor: pointer;
+          transition:
+            background 0.3s,
+            color 0.3s;
+
+          &:hover {
+            background: #f0e4c4;
+          }
+
+          &.sizeSelected {
+            background: #2c1a0e;
+            color: #faf5ec;
+            border-color: #2c1a0e;
+          }
+        }
+      }
+    }
+
+    /* Цвета */
+    .colorsBlock {
+      margin-bottom: 32px;
+
+      .colorsLabel {
+        font-family: "Cinzel", serif;
+        font-size: 10px;
+        letter-spacing: 5px;
+        color: #8b6010;
+        margin-bottom: 14px;
+      }
+
+      .colorsGrid {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        .colorDot {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          border: 1.5px solid rgba(201, 168, 76, 0.3);
+          cursor: pointer;
+          transition:
+            border-color 0.3s,
+            transform 0.2s;
+
+          &:hover {
+            border-color: #c9a84c;
+            transform: scale(1.1);
+          }
+        }
+
+        .colorDotSelected {
+          border-color: #c9a84c !important;
+          border-width: 2.5px;
+          transform: scale(1.15);
+        }
+
+        .selectedColorName {
+          font-family: "Cinzel", serif;
+          font-size: 10px;
+          letter-spacing: 3px;
+          color: #8b6010;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    /* Кнопка в корзину */
+    .addToCart {
+      padding: 16px 40px;
+      background: #2c1a0e;
+      color: #faf5ec;
+      font-family: "Cinzel", serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-bottom: 16px;
+
+      &:hover {
+        background: #8b6010;
+      }
+    }
+
+    /* Кнопка назад */
+    .backBtn {
+      background: transparent;
+      border: none;
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #c9a84c;
+      cursor: pointer;
+      padding: 0;
+      text-align: left;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+/* Если товар не найден */
+.notFound {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: #faf5ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  p {
+    font-family: "Cinzel", serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #c9a84c;
+  }
+
+  button {
+    padding: 12px 32px;
+    background: transparent;
+    border: 0.5px solid #2c1a0e;
+    font-family: "Cinzel", serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #2c1a0e;
+    cursor: pointer;
+
+    &:hover {
+      background: #2c1a0e;
+      color: #faf5ec;
+    }
+  }
+}
+
+/* ========================================
+   МЕДИАЗАПРОСЫ (от большего к меньшему)
+   ======================================== */
+
+/* ── 1024px: планшет горизонтальный ── */
+@media (max-width: 1024px) {
+  .product {
+    /* Немного сжимаем колонки, фото и инфо всё ещё рядом */
+    grid-template-columns: 1fr 1fr;
+
+    .imageWrap {
+      /* Миниатюры чуть меньше */
+      .thumbs {
+        .thumb {
+          width: 60px;
+          height: 80px;
+        }
+      }
+    }
+
+    .info {
+      /* Уменьшаем отступы */
+      padding: 48px 40px;
+
+      .name {
+        font-size: 34px;
+      }
+
+      .description {
+        max-width: 100%;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+/* ── 768px: планшет вертикальный ── */
+@media (max-width: 768px) {
+  .product {
+    /* Переходим на одну колонку: фото сверху, инфо снизу */
+    grid-template-columns: 1fr;
+
+    .imageWrap {
+      /* Sticky больше не нужен — блок занимает всю ширину */
+      position: static;
+      /* Убираем фиксированную высоту — фото показывается полностью */
+      height: auto;
+      max-height: none;
+      padding: 10px;
+
+      .image {
+        /* Фото занимает всю ширину, высота — по пропорции */
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .placeholder {
+        /* Задаём пропорцию через aspect-ratio вместо жёсткой высоты */
+        aspect-ratio: 3 / 4;
+        height: auto;
+      }
+
+      .thumbs {
+        padding: 0 16px;
+
+        .thumb {
+          width: 56px;
+          height: 74px;
+        }
+      }
+    }
+
+    .info {
+      padding: 40px 32px;
+      justify-content: flex-start;
+
+      .name {
+        font-size: 30px;
+      }
+
+      .price {
+        font-size: 20px;
+        margin-bottom: 24px;
+      }
+
+      .description {
+        max-width: 100%;
+        margin-bottom: 28px;
+      }
+
+      .sizesBlock {
+        margin-bottom: 28px;
+      }
+
+      .colorsBlock {
+        margin-bottom: 24px;
+      }
+
+      .addToCart {
+        /* Кнопка на всю ширину */
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+/* ── 480px: крупный смартфон ── */
+@media (max-width: 480px) {
+  .product {
+    .imageWrap {
+      /* высота задаётся контентом, не фиксируем */
+      height: auto;
+
+      .thumbs {
+        padding: 0 12px;
+        gap: 6px;
+
+        .thumb {
+          width: 48px;
+          height: 64px;
+        }
+      }
+    }
+
+    .info {
+      padding: 28px 16px;
+
+      .category {
+        font-size: 9px;
+        letter-spacing: 4px;
+        margin-bottom: 12px;
+      }
+
+      .name {
+        font-size: 26px;
+        letter-spacing: 1px;
+        margin-bottom: 14px;
+      }
+
+      .price {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      .line {
+        margin-bottom: 20px;
+      }
+
+      .description {
+        font-size: 13px;
+        line-height: 1.8;
+        margin-bottom: 24px;
+      }
+
+      .sizesBlock {
+        margin-bottom: 24px;
+
+        .sizesGrid {
+          .sizeBtn {
+            padding: 8px 16px;
+            font-size: 10px;
+          }
+        }
+      }
+
+      .colorsBlock {
+        margin-bottom: 20px;
+
+        .colorsGrid {
+          .colorDot {
+            width: 28px;
+            height: 28px;
+          }
+        }
+      }
+
+      .addToCart {
+        padding: 14px 32px;
+        font-size: 10px;
+        letter-spacing: 4px;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  .notFound {
+    p {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-align: center;
+      padding: 0 16px;
+    }
+  }
+}
+
+/* ── 430px: iPhone Pro Max и похожие ── */
+@media (max-width: 430px) {
+  .product {
+    .imageWrap {
+      height: auto;
+
+      .thumbs {
+        padding: 0 10px;
+
+        .thumb {
+          width: 44px;
+          height: 58px;
+        }
+      }
+    }
+
+    .info {
+      padding: 24px 14px;
+
+      .name {
+        font-size: 24px;
+      }
+
+      .price {
+        font-size: 17px;
+      }
+
+      .description {
+        font-size: 12px;
+      }
+
+      .sizesBlock {
+        .sizesGrid {
+          gap: 6px;
+
+          .sizeBtn {
+            padding: 8px 14px;
+            font-size: 10px;
+          }
+        }
+      }
+
+      .colorsBlock {
+        .colorsGrid {
+          gap: 8px;
+
+          .colorDot {
+            width: 26px;
+            height: 26px;
+          }
+        }
+      }
+
+      .addToCart {
+        padding: 13px;
+        font-size: 9px;
+        letter-spacing: 4px;
+      }
+    }
+  }
+}
+
+/* ── 375px: iPhone SE / стандартный iPhone ── */
+@media (max-width: 375px) {
+  .product {
+    padding-top: 56px;
+
+    .imageWrap {
+      height: auto;
+
+      .thumbs {
+        padding: 0 8px;
+        gap: 5px;
+
+        .thumb {
+          width: 40px;
+          height: 52px;
+        }
+      }
+    }
+
+    .info {
+      padding: 20px 12px;
+
+      .category {
+        font-size: 8px;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+      }
+
+      .name {
+        font-size: 22px;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+      }
+
+      .price {
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+      }
+
+      .line {
+        margin-bottom: 16px;
+      }
+
+      .description {
+        font-size: 12px;
+        line-height: 1.7;
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
+      }
+
+      .sizesBlock {
+        margin-bottom: 20px;
+
+        .sizesLabel {
+          font-size: 9px;
+          letter-spacing: 3px;
+          margin-bottom: 10px;
+        }
+
+        .sizesGrid {
+          gap: 5px;
+
+          .sizeBtn {
+            padding: 7px 12px;
+            font-size: 9px;
+            letter-spacing: 1px;
+          }
+        }
+      }
+
+      .colorsBlock {
+        margin-bottom: 16px;
+
+        .colorsLabel {
+          font-size: 9px;
+          letter-spacing: 3px;
+          margin-bottom: 10px;
+        }
+
+        .colorsGrid {
+          gap: 7px;
+
+          .colorDot {
+            width: 24px;
+            height: 24px;
+          }
+
+          .selectedColorName {
+            font-size: 9px;
+            letter-spacing: 2px;
+          }
+        }
+      }
+
+      .addToCart {
+        padding: 12px;
+        font-size: 9px;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+      }
+
+      .backBtn {
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .notFound {
+    gap: 16px;
+
+    p {
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    button {
+      padding: 10px 24px;
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
+  }
+}

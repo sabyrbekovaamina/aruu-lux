@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&family=Kalnia:wght@300;400&family=Cinzel:wght@400&family=Tenor+Sans&display=swap");
+
+.login {
+  padding-top: 85px;
+  // margin-top: 80px;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #f4c8b8 0%, #e3a08d 40%, #c46c56 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // padding: 40px 20px;
+
+  .card {
+    background: #faf5ec;
+    padding: 48px 40px;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    /* Логотип */
+    .logo {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      margin-bottom: 8px;
+
+      .A {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 42px;
+        font-weight: 400;
+        color: rgba(67, 1, 1, 0.81);
+      }
+
+      .RUU {
+        font-family: "Kalnia", serif;
+        font-size: 26px;
+        font-weight: 300;
+        background: linear-gradient(180deg, #430101 0%, #bc351a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 3px;
+      }
+    }
+
+    .subtitle {
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: #c9a84c;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* Ошибка */
+    .error {
+      font-family: "Tenor Sans", sans-serif;
+      font-size: 12px;
+      color: #c46c56;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    /* Поле */
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 30px;
+
+      .label {
+        font-family: "Cinzel", serif;
+        font-size: 9px;
+        letter-spacing: 4px;
+        color: #8b6010;
+        text-transform: uppercase;
+      }
+
+      .input {
+        padding: 12px 0;
+        background: transparent;
+        border: none;
+        border-bottom: 0.5px solid #c9a84c;
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 14px;
+        color: #2c1a0e;
+        outline: none;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: #2c1a0e;
+        }
+
+        &::placeholder {
+          color: #c9a84c;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    /* Основная кнопка */
+    .btn {
+      padding: 14px;
+      background: #2c1a0e;
+      color: #faf5ec;
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 8px;
+
+      &:hover {
+        background: #8b6010;
+      }
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    /* Разделитель or */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      &::before,
+      &::after {
+        content: "";
+        flex: 1;
+        height: 0.5px;
+        background: rgba(201, 168, 76, 0.3);
+      }
+
+      span {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 11px;
+        color: #c9a84c;
+        letter-spacing: 2px;
+      }
+    }
+
+    /* Кнопка Google */
+    .googleBtn {
+      padding: 14px;
+      background: transparent;
+      border: 0.5px solid #c9a84c;
+      color: #2c1a0e;
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #f0e4c4;
+      }
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    /* Ссылка */
+    .link {
+      font-family: "Tenor Sans", sans-serif;
+      font-size: 12px;
+      color: #8b7355;
+      text-align: center;
+      letter-spacing: 1px;
+
+      .navLink {
+        color: #8b6010;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+/* Приветствие */
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+
+  .welcomeLabel {
+    font-family: "Cinzel", serif;
+    font-size: 9px;
+    letter-spacing: 6px;
+    color: #c9a84c;
+    text-transform: uppercase;
+  }
+
+  .welcomeName {
+    font-family: "Kalnia", serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: #2c1a0e;
+    letter-spacing: 3px;
+  }
+
+  .welcomeLine {
+    width: 60px;
+    height: 0.5px;
+    background: #c9a84c;
+  }
+
+  .welcomeText {
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #8b7355;
+  }
+}
+
+/* Кнопка выйти */
+.signOutBtn {
+  background: transparent;
+  border: none;
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #c9a84c;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+/* ================= 1024px ================= */
+@media (max-width: 1024px) {
+  .login,
+  .register {
+    // margin-top: 75px;
+    .card {
+      max-width: 380px;
+      padding: 40px 32px;
+    }
+  }
+}
+
+/* ================= 768px ================= */
+@media (max-width: 768px) {
+  .login,
+  .register {
+    // margin-top: 70px;
+    padding: 30px 16px;
+
+    .card {
+      max-width: 100%;
+      padding: 32px 24px;
+      gap: 16px;
+    }
+
+    .logo {
+      .A {
+        font-size: 36px;
+      }
+
+      .RUU {
+        font-size: 22px;
+      }
+    }
+
+    .field .input {
+      font-size: 13px;
+    }
+  }
+
+  .welcome {
+    .welcomeName {
+      font-size: 26px;
+    }
+  }
+}
+
+/* ================= 480px ================= */
+@media (max-width: 480px) {
+  .login,
+  .register {
+    // margin-top: 65px;
+    padding: 24px 14px;
+
+    .card {
+      padding: 28px 18px;
+      gap: 14px;
+    }
+
+    .logo {
+      .A {
+        font-size: 32px;
+      }
+
+      .RUU {
+        font-size: 20px;
+      }
+    }
+
+    .field .input {
+      font-size: 12px;
+    }
+
+    .btn,
+    .googleBtn {
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
+  }
+
+  .welcome {
+    .welcomeName {
+      font-size: 22px;
+    }
+  }
+}
+
+/* ================= 430px (КЛЮЧЕВОЙ УРОВЕНЬ) ================= */
+@media (max-width: 430px) {
+  .login,
+  .register {
+    // margin-top: 60px;
+    padding: 20px 12px;
+
+    .card {
+      padding: 24px 14px;
+      gap: 12px;
+    }
+
+    .logo {
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+
+      .A {
+        font-size: 28px;
+      }
+
+      .RUU {
+        font-size: 18px;
+        letter-spacing: 2px;
+      }
+    }
+
+    .field .input {
+      font-size: 12px;
+    }
+
+    .btn,
+    .googleBtn {
+      font-size: 8px;
+    }
+  }
+
+  .welcome {
+    .welcomeName {
+      font-size: 20px;
+    }
+
+    .welcomeText {
+      font-size: 11px;
+    }
+  }
+}
+
+/* ================= 375px ================= */
+@media (max-width: 375px) {
+  .login,
+  .register {
+    // margin-top: 50px;
+    padding: 16px 10px;
+
+    .card {
+      padding: 20px 12px;
+    }
+
+    .logo {
+      flex-direction: row;
+      .A {
+        font-size: 26px;
+      }
+
+      .RUU {
+        font-size: 16px;
+      }
+    }
+
+    .subtitle {
+      font-size: 9px;
+    }
+
+    .field .input {
+      font-size: 11px;
+    }
+
+    .btn,
+    .googleBtn {
+      font-size: 8px;
+    }
+  }
+
+  .welcome {
+    .welcomeName {
+      font-size: 18px;
+    }
+
+    .welcomeText {
+      font-size: 10px;
+    }
+  }
+}
