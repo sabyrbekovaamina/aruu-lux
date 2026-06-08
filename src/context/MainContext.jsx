@@ -1,9 +1,11 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 
-const PRODUCT_API = "/api/api/v1/0f9b2-c0dc4-d415d/aruu";
-const BASKET_API = "/api/api/v1/1fd78-5ece4-1cf1c/basket";
-const CHECK_API = "/api/api/v1/7dc53-7af65-780c7/checkout";
+const BASE_URL = "https://api-crud.elcho.dev";
+
+const PRODUCT_API = `${BASE_URL}/api/v1/0f9b2-c0dc4-d415d/aruu`;
+const BASKET_API = `${BASE_URL}/api/v1/1fd78-5ece4-1cf1c/basket`;
+const CHECK_API = `${BASE_URL}/api/v1/7dc53-7af65-780c7/checkout`;
 
 const productContext = createContext();
 export const useProduct = () => useContext(productContext);

@@ -194,10 +194,15 @@
       .label {
         font-size: 9px;
         letter-spacing: 4px;
+        padding-top: 20px;
+      }
+      .categoryNameRu,
+      .categoryNameEn {
+        font-size: 80px;
       }
 
       .title {
-        font-size: 28px;
+        font-size: 20px;
       }
     }
 
@@ -253,6 +258,11 @@
       .label {
         font-size: 7px;
         letter-spacing: 3px;
+      }
+
+      .categoryNameRu,
+      .categoryNameEn {
+        font-size: 70px;
       }
 
       .title {

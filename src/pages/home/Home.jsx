@@ -60,6 +60,7 @@ const Home = () => {
           muted
           loop
           playsInline
+          preload="none"
         />
 
         <div className={scss.overlay}></div>
