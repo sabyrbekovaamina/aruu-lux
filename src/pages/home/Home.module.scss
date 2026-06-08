@@ -466,8 +466,6 @@
   .home {
     padding-top: 75px;
     .hero {
-      min-height: 50vh;
-
       .heroContent {
         .title {
           font-size: clamp(48px, 8vw, 80px);
@@ -520,7 +518,7 @@
   .home {
     padding-top: 70px;
     .hero {
-      min-height: 86vh;
+      min-height: 100vh;
 
       .heroContent {
         .title {
@@ -587,7 +585,7 @@
 
       .categoryCard {
         .categoryImg {
-          height: 65vh;
+          height: 95vh;
         }
 
         .categoryContent {
@@ -615,6 +613,8 @@
 
     .featured {
       .featuredContent {
+        min-height: 55vh;
+        padding-top: 100px;
         .featuredTitle {
           font-size: clamp(38px, 7vw, 42px);
         }
@@ -675,7 +675,7 @@
     .categories {
       .categoryCard {
         .categoryImg {
-          height: 52vh;
+          height: 90vh;
         }
 
         .categoryContent {
@@ -692,7 +692,7 @@
   }
 }
 
-/* ============ 375px ============= */
+/* ============ 430px ============= */
 
 @media (max-width: 430px) {
   .home {
@@ -732,17 +732,13 @@
       gap: 10px;
 
       .categoryCard {
-        .categoryImg {
-          height: 48vh;
-        }
-
         .categoryContent {
           left: 12px;
           bottom: 14px;
 
           .categoryNameEn,
           .categoryNameRu {
-            font-size: 24px;
+            font-size: 35px;
             letter-spacing: 2px;
             white-space: nowrap;
           }

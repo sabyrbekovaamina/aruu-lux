@@ -12,7 +12,7 @@ import {
 const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
-const ADMIN_EMAILS = ["admin@gmail.com"];
+const ADMIN_EMAILS = ["sabyrbekovaamina108@gmail.com"];
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);

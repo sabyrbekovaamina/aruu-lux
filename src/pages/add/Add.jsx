@@ -296,6 +296,7 @@ const Add = () => {
               )}
             </div>
             <button
+              className={scss.delete}
               onClick={(e) => {
                 e.stopPropagation();
                 deleteProduct(item._id);
