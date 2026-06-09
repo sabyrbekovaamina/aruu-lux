@@ -128,7 +128,6 @@
         }
       }
 
-      /* ── Overlay: было 0.4s → стало 0.15s ── */
       .overlay {
         position: absolute;
         bottom: 0;
@@ -274,11 +273,11 @@
             padding: 20px;
 
             .lookTitle {
-              font-size: 20px;
+              font-size: 15px;
             }
 
             .lookSubtitle {
-              font-size: 9px;
+              font-size: 8px;
             }
           }
         }
@@ -364,11 +363,11 @@
             padding: 14px;
 
             .lookTitle {
-              font-size: 18px;
+              font-size: 12px;
             }
 
             .lookSubtitle {
-              font-size: 8px;
+              font-size: 6px;
               letter-spacing: 3px;
             }
           }
