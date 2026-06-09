@@ -9,22 +9,15 @@ const Search = () => {
   const { product } = useProduct();
   const { lang } = useLang();
 
-  // Текст который вводит пользователь
   const [query, setQuery] = useState("");
 
-  // Фильтруем товары по названию
-  // .toLowerCase() — делаем всё маленькими буквами чтобы поиск не зависел от регистра
-  // .includes() — проверяет есть ли введённый текст в названии товара
   const results = product.filter((item) =>
-    item.category.toLowerCase().includes(query.toLowerCase()),
+    item.name.toLowerCase().includes(query.toLowerCase()),
   );
-
-  // Показываем результаты только если что-то введено
   const showResults = query.trim().length > 0;
 
   return (
     <div className={scss.search}>
-      {/* Поле поиска */}
       <section className={scss.hero}>
         <p className={scss.label}>ARUU</p>
         <h1 className={scss.title}>{lang === "ru" ? "Поиск" : "Search"}</h1>
@@ -40,7 +33,6 @@ const Search = () => {
             onChange={(e) => setQuery(e.target.value)}
             autoFocus
           />
-          {/* Кнопка очистки */}
           {query && (
             <button className={scss.clearBtn} onClick={() => setQuery("")}>
               ×
@@ -49,9 +41,7 @@ const Search = () => {
         </div>
       </section>
 
-      {/* Результаты */}
       <section className={scss.results}>
-        {/* Ничего не введено */}
         {!showResults && (
           <p className={scss.hint}>
             {lang === "ru"
@@ -60,7 +50,6 @@ const Search = () => {
           </p>
         )}
 
-        {/* Введено но ничего не найдено */}
         {showResults && results.length === 0 && (
           <p className={scss.notFound}>
             {lang === "ru"
@@ -69,7 +58,6 @@ const Search = () => {
           </p>
         )}
 
-        {/* Найденные товары */}
         {showResults && results.length > 0 && (
           <>
             <p className={scss.count}>
@@ -83,7 +71,6 @@ const Search = () => {
                   className={scss.card}
                   onClick={() => navigate(`/product/${item._id}`)}
                 >
-                  {/* Фото */}
                   <div className={scss.imgWrap}>
                     {item.image ? (
                       <img
@@ -98,7 +85,6 @@ const Search = () => {
                     )}
                   </div>
 
-                  {/* Инфо */}
                   <div className={scss.info}>
                     <p className={scss.category}>
                       {item.category === "abayas" &&
