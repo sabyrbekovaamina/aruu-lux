@@ -225,14 +225,6 @@
         background-repeat: no-repeat;
         position: relative;
         transition: transform 0.8s ease;
-
-        .categoryOverlay {
-          position: absolute;
-          inset: 0;
-          background: transparent;
-          background-color: #43150737;
-        }
-
         &::after {
           content: "";
           position: absolute;

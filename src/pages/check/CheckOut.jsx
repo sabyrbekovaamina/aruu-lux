@@ -3,6 +3,7 @@ import scss from "./CheckOut.module.scss";
 import { useProduct } from "../../context/MainContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useLang } from "../../context/LanguageContext";
 
 const TOKEN = import.meta.env.VITE_TG_TOKEN;
 const CHAT_ID = import.meta.env.VITE_TG_CHAT_ID;
@@ -10,6 +11,7 @@ const CHAT_ID = import.meta.env.VITE_TG_CHAT_ID;
 const CheckOut = () => {
   const { check, readCheck, clearCheck, deleteCheck } = useProduct();
   const navigate = useNavigate();
+  const { t } = useLang();
 
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -83,11 +85,11 @@ const CheckOut = () => {
       {/* left side */}
       <div className={scss.form}>
         <p className={scss.label}>ARUU</p>
-        <h1 className={scss.title}>Checkout</h1>
+        <h1 className={scss.title}>{t.check}</h1>
         <div className={scss.line}></div>
 
         <div className={scss.field}>
-          <label className={scss.fieldLabel}>Full Name</label>
+          <label className={scss.fieldLabel}>{t.name}</label>
           <input
             className={scss.input}
             placeholder="..."
@@ -97,7 +99,7 @@ const CheckOut = () => {
         </div>
 
         <div className={scss.field}>
-          <label className={scss.fieldLabel}>Address</label>
+          <label className={scss.fieldLabel}>{t.address}</label>
           <input
             className={scss.input}
             placeholder="Street, House"
@@ -107,7 +109,7 @@ const CheckOut = () => {
         </div>
 
         <div className={scss.field}>
-          <label className={scss.fieldLabel}>City</label>
+          <label className={scss.fieldLabel}>{t.city}</label>
           <input
             className={scss.input}
             placeholder="Bishkek"
@@ -117,7 +119,7 @@ const CheckOut = () => {
         </div>
 
         <div className={scss.field}>
-          <label className={scss.fieldLabel}>Phone</label>
+          <label className={scss.fieldLabel}>{t.phone}</label>
           <input
             className={scss.input}
             placeholder="+996 700 000 000"
@@ -127,7 +129,7 @@ const CheckOut = () => {
         </div>
 
         <div className={scss.field}>
-          <label className={scss.fieldLabel}>Email</label>
+          <label className={scss.fieldLabel}>{t.emaill}</label>
           <input
             className={scss.input}
             placeholder="name@email.com"
@@ -141,17 +143,17 @@ const CheckOut = () => {
           onClick={sendOrder}
           disabled={loading}
         >
-          {loading ? "Sending..." : "Place Order"}
+          {loading ? "Sending..." : t.placeorder}
         </button>
 
         <button className={scss.backBtn} onClick={() => navigate(-1)}>
-          ← Back
+          ← {t.back}
         </button>
       </div>
 
       {/* right side */}
       <div className={scss.order}>
-        <p className={scss.orderLabel}>YOUR ORDER</p>
+        <p className={scss.orderLabel}>{t.yourorder}</p>
 
         {check.length === 0 ? (
           <p className={scss.empty}>No items</p>
@@ -172,17 +174,21 @@ const CheckOut = () => {
                 <div className={scss.itemInfo}>
                   <p className={scss.itemName}>{item.name}</p>
                   {item.size && (
-                    <p className={scss.itemMeta}>Size: {item.size}</p>
+                    <p className={scss.itemMeta}>
+                      {t.size}: {item.size}
+                    </p>
                   )}
                   {item.color && (
-                    <p className={scss.itemMeta}>Color: {item.color}</p>
+                    <p className={scss.itemMeta}>
+                      {t.color}: {item.color}
+                    </p>
                   )}
                   <p className={scss.itemCount}>× {item.count || 1}</p>
                 </div>
 
                 {/* price */}
                 <p className={scss.itemPrice}>
-                  {Number(item.price) * (item.count || 1)} som
+                  {Number(item.price) * (item.count || 1)} {t.som}
                 </p>
 
                 {/* remove */}
@@ -197,8 +203,10 @@ const CheckOut = () => {
 
             {/* total */}
             <div className={scss.total}>
-              <p className={scss.totalLabel}>TOTAL</p>
-              <p className={scss.totalPrice}>{total} som</p>
+              <p className={scss.totalLabel}>{t.total}</p>
+              <p className={scss.totalPrice}>
+                {total} {t.som}
+              </p>
             </div>
           </>
         )}

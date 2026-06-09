@@ -152,10 +152,13 @@
 
       .itemInfo {
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
 
         .itemName {
           font-family: "Kalnia", serif;
-          font-size: 16px;
+          font-size: 14px;
           font-weight: 300;
           color: #2c1a0e;
           margin-bottom: 4px;

@@ -133,6 +133,17 @@ const translations = {
     color: "COLOR",
     size: "SIZE",
     som: "som",
+
+    // checkout
+    check: "Checkout",
+    name: "Full Name",
+    address: "ADDRESS",
+    city: "CITY",
+    phone: "PHONE",
+    emaill: "EMAIL",
+    placeorder: "PLACE ORDER",
+    yourorder: "YOUR ORDER",
+    noitems: "No items",
   },
   ru: {
     collections: "Коллекции",
@@ -257,6 +268,17 @@ const translations = {
     color: "ЦВЕТ",
     size: "РАЗМЕР",
     som: "сом",
+
+    // checkout
+    check: "Проверить",
+    name: "Полное имя",
+    address: "АДРЕСС",
+    city: "ГОРОД",
+    phone: "НОМЕР",
+    emaill: "ПОЧТА",
+    placeorder: "ОФОРМИТЬ ЗАКАЗ",
+    yourorder: "ВАШ ЗАКАЗ",
+    noitems: "Нет товаров",
   },
 };
 

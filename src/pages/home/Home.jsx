@@ -157,8 +157,6 @@ const Home = () => {
               className={scss.categoryImg}
               style={{ backgroundImage: `url(${cat.image})` }}
             >
-              <div className={scss.categoryOverlay}></div>
-
               <div className={scss.categoryContent}>
                 <p className={scss.categoryLabel}>ARUU</p>
 
