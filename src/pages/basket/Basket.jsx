@@ -97,17 +97,21 @@ const Basket = () => {
                   </p>
                   <p className={scss.itemName}>{item.name}</p>
                   {item.size && (
-                    <p className={scss.itemMeta}>Size: {item.size}</p>
+                    <p className={scss.itemMeta}>
+                      {t.size}: {item.size}
+                    </p>
                   )}
                   {item.color && (
-                    <p className={scss.itemMeta}>Color: {item.color}</p>
+                    <p className={scss.itemMeta}>
+                      {t.color}: {item.color}
+                    </p>
                   )}
                 </div>
 
                 {/* quantity */}
                 <div className={scss.counter}>
                   <p className={scss.itemPrice}>
-                    {Number(item.price) * (item.count || 1)} som
+                    {Number(item.price) * (item.count || 1)} {t.som}
                   </p>
                   <button onClick={() => changeCount(item._id, "dec")}>
                     −
@@ -132,7 +136,9 @@ const Basket = () => {
         {/* total */}
         <div className={scss.summary}>
           <p className={scss.summaryLabel}>{t.total}</p>
-          <p className={scss.summaryTotal}>{totalPrice} som</p>
+          <p className={scss.summaryTotal}>
+            {totalPrice} {t.som}
+          </p>
 
           <button className={scss.orderBtn} onClick={handleCheckout}>
             {t.order}

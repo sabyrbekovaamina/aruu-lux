@@ -133,11 +133,12 @@
 
         .itemInfo {
           display: flex;
-          justify-content: space-between; // ← вот так
+          justify-content: space-between;
+          align-items: center;
           gap: 24px;
 
           .iteminfo {
-            line-height: 2.5;
+            line-height: 2.8;
             .itemCategory {
               font-family: "Cinzel", serif;
               font-size: 9px;
@@ -149,11 +150,10 @@
               font-family: "Kalnia", serif;
               font-size: 22px;
               font-weight: 300;
-              color: #2c1a0e;
+              color: #4c2104;
             }
 
-            .itemSize,
-            .itemColor {
+            .itemMeta {
               font-family: "Tenor Sans", sans-serif;
               font-size: 12px;
               color: #8b7355;

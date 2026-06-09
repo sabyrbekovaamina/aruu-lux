@@ -4,7 +4,7 @@ import { useProduct } from "../../context/MainContext";
 import { useNavigate } from "react-router-dom";
 
 const Lookbook = () => {
-  const { lang } = useLang();
+  const { t, lang } = useLang();
   const { product } = useProduct();
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const Lookbook = () => {
     <div className={scss.lookbook} onClick={() => navigate("/collections")}>
       <section className={scss.hero}>
         <p className={scss.label}>ARUU · 2026</p>
-        <h1 className={scss.title}>Lookbook</h1>
+        <h1 className={scss.title}>{t.lookbook}</h1>
         <div className={scss.line}></div>
         <p className={scss.subtitle}>
           {lang === "ru" ? "Образы которые вдохновляют" : "Looks that inspire"}

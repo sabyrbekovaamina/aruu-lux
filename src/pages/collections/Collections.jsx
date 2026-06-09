@@ -7,7 +7,7 @@ import scss from "./Collections.module.scss";
 const Collections = () => {
   const navigate = useNavigate();
   const { product } = useProduct();
-  const { lang } = useLang();
+  const { t, lang } = useLang();
 
   // filter, show all products
   const [activeFilter, setActiveFilter] = useState("all");
@@ -31,7 +31,7 @@ const Collections = () => {
       {/* title */}
       <section className={scss.hero}>
         <p className={scss.label}>ARUU</p>
-        <h1 className={scss.title}>Collections</h1>
+        <h1 className={scss.title}>{t.collections}</h1>
         <div className={scss.line}></div>
         <p className={scss.subtitle}>
           {lang === "ru"
@@ -86,14 +86,6 @@ const Collections = () => {
                   <span>{lang === "ru" ? "Смотреть" : "View"}</span>
                 </div>
               </div>
-              {/* <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  deleteProduct(item._id);
-                }}
-              >
-                Delete
-              </button> */}
 
               {/* info */}
               <div className={scss.info}>

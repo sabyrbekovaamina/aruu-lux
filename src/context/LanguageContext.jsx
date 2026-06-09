@@ -5,14 +5,17 @@ const LanguageContext = createContext();
 
 const translations = {
   en: {
+    // header
     collections: "Collections",
     about: "About",
     lookbook: "Lookbook",
     contact: "Contact",
+
     newCollection: "NEW COLLECTION · 2026",
     modestLuxury: "Modest Luxury · Wear your light",
     newArrivals: "NEW ARRIVALS",
 
+    // admin
     addTitle: "Add Product",
     addSubtitle: "ARUU · Admin",
     addName: "Name",
