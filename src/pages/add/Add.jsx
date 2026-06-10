@@ -71,6 +71,7 @@ const Add = () => {
       );
 
       const data = await response.json();
+      console.log("Cloudinary response:", data);
 
       if (data.secure_url) {
         setImage(data.secure_url); // save photo
@@ -101,8 +102,7 @@ const Add = () => {
       return;
     }
 
-    setLoading(true);
-
+    // Сначала создаём объект
     const newProduct = {
       name: name.trim(),
       price: price,
@@ -112,6 +112,9 @@ const Add = () => {
       sizes: sizes,
       colors: colors,
     };
+    console.log("Отправляем товар:", newProduct);
+    // Потом включаем загрузку
+    setLoading(true);
 
     try {
       await addProduct(newProduct);
@@ -204,7 +207,6 @@ const Add = () => {
               <option value="dresses">Dresses</option>
               <option value="hijabs">Hijabs</option>
               <option value="collections">Collections</option>
-              <option value="lookbook">Lookbook</option>
             </select>
           </div>
 

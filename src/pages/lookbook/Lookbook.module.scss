@@ -5,7 +5,6 @@
   background: #faf5ec;
   padding-top: 80px;
 
-  /* ── Заголовок ── */
   .hero {
     padding: 80px 80px 60px;
     text-align: center;
@@ -45,7 +44,6 @@
     }
   }
 
-  /* ── Пусто ── */
   .empty {
     padding: 120px;
     text-align: center;
@@ -59,7 +57,7 @@
     }
   }
 
-  /* ── Сетка фото ── */
+  /* ===== LUXURY GRID ===== */
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -70,101 +68,87 @@
     .large {
       grid-column: span 2;
     }
-
     .small {
       grid-column: span 1;
     }
   }
-
-  /* ── Элемент сетки ── */
   .item {
     overflow: hidden;
     position: relative;
     cursor: pointer;
+  }
+  .imgWrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
 
-    .imgWrap {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-      &:hover .img {
-        transform: scale(1.04);
-      }
+    &:hover .img {
+      transform: scale(1.05);
+    }
 
-      &:hover .placeholder {
-        transform: scale(1.04);
-      }
-
-      &:hover .overlay {
-        opacity: 1;
-      }
-
-      .img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.8s ease;
-      }
-
-      .placeholder {
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          160deg,
-          #f4c8b8 0%,
-          #e3a08d 40%,
-          #c46c56 100%
-        );
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.8s ease;
-
-        .placeholderText {
-          font-family: "Cinzel", serif;
-          font-size: 16px;
-          letter-spacing: 8px;
-          color: rgba(255, 240, 230, 0.4);
-        }
-      }
-
-      .overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 40px;
-        background: linear-gradient(
-          to top,
-          rgba(20, 8, 4, 0.75) 0%,
-          transparent 100%
-        );
-        opacity: 0;
-        transition: opacity 0.15s ease;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-
-        .lookSubtitle {
-          font-family: "Cinzel", serif;
-          font-size: 10px;
-          letter-spacing: 5px;
-          color: #c9a84c;
-          text-transform: uppercase;
-        }
-
-        .lookTitle {
-          font-family: "Kalnia", serif;
-          font-size: 24px;
-          font-weight: 300;
-          color: #fff5ee;
-          letter-spacing: 2px;
-        }
-      }
+    &:hover .overlay {
+      opacity: 1;
     }
   }
 
-  /* ── Нижний текст ── */
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+  }
+
+  .placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #f4c8b8, #c46c56);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .placeholderText {
+    font-family: "Cinzel", serif;
+    font-size: 14px;
+    letter-spacing: 6px;
+    color: rgba(255, 240, 230, 0.4);
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(20, 8, 4, 0.75), transparent);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .lookSubtitle {
+    font-family: "Cinzel", serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #c9a84c;
+  }
+
+  .lookTitle {
+    font-family: "Kalnia", serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #fff5ee;
+  }
+
+  .description {
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 12px;
+    color: rgba(255, 245, 238, 0.8);
+  }
+
   .bottom {
     padding: 100px 80px;
     text-align: center;
@@ -172,227 +156,101 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
 
-    .bottomLabel {
-      font-family: "Cinzel", serif;
-      font-size: 10px;
-      letter-spacing: 6px;
-      color: #c9a84c;
-    }
+  .bottomLabel {
+    font-family: "Cinzel", serif;
+    font-size: 10px;
+    letter-spacing: 6px;
+    color: #c9a84c;
+  }
 
-    .bottomTitle {
-      font-family: "Kalnia", serif;
-      font-size: clamp(32px, 5vw, 56px);
-      font-weight: 300;
-      font-style: italic;
-      color: #2c1a0e;
-      letter-spacing: 3px;
-    }
+  .bottomTitle {
+    font-family: "Kalnia", serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 300;
+    font-style: italic;
+    color: #2c1a0e;
   }
 }
 
-/* ================= 1024 ================= */
+/* ===== RESPONSIVE ===== */
 
 @media (max-width: 1024px) {
   .lookbook {
     .hero {
       padding: 70px 40px 50px;
     }
-
-    .grid {
-      grid-auto-rows: 500px;
-    }
-
-    .bottom {
-      padding: 80px 40px;
-    }
   }
 }
-
-/* ================= 768 ================= */
 
 @media (max-width: 768px) {
   .lookbook {
     padding-top: 70px;
 
     .hero {
-      padding: 60px 30px 40px;
+      padding: 60px 25px 40px;
 
       .title {
-        font-size: clamp(34px, 8vw, 60px);
-        letter-spacing: 4px;
-      }
-
-      .subtitle {
-        font-size: 11px;
-        letter-spacing: 3px;
+        font-size: clamp(34px, 7vw, 60px);
       }
     }
 
     .grid {
-      grid-auto-rows: 500px;
+      grid-template-columns: 1fr;
+      gap: 6px;
     }
 
-    .bottom {
-      padding: 70px 30px;
+    .overlay {
+      padding: 25px;
+    }
+
+    .lookTitle {
+      font-size: 18px;
     }
   }
 }
-
-/* ================= 480 ================= */
 
 @media (max-width: 480px) {
   .lookbook {
-    padding-top: 66px;
-
     .hero {
-      padding: 50px 20px 35px;
-
-      .label {
-        font-size: 9px;
-        letter-spacing: 4px;
-      }
-
-      .title {
-        font-size: 32px;
-        letter-spacing: 2px;
-      }
-
-      .subtitle {
-        font-size: 10px;
-        letter-spacing: 2px;
-      }
+      padding: 50px 16px 30px;
     }
 
-    .grid {
-      grid-auto-rows: 420px;
+    .title {
+      font-size: 28px;
+    }
 
-      .item {
-        .imgWrap {
-          .overlay {
-            padding: 20px;
+    .overlay {
+      padding: 18px;
+    }
 
-            .lookTitle {
-              font-size: 15px;
-            }
-
-            .lookSubtitle {
-              font-size: 8px;
-            }
-          }
-        }
-      }
+    .lookTitle {
+      font-size: 16px;
     }
 
     .bottom {
-      padding: 60px 20px;
-
-      .bottomTitle {
-        font-size: 28px;
-      }
+      padding: 60px 16px;
     }
   }
 }
-
-/* ================= 430 ================= */
-
-@media (max-width: 430px) {
-  .lookbook {
-    padding-top: 60px;
-
-    .hero {
-      padding: 40px 14px 30px;
-
-      .title {
-        font-size: 28px;
-      }
-
-      .line {
-        margin: 18px 0;
-      }
-
-      .subtitle {
-        font-size: 9px;
-      }
-    }
-
-    .grid {
-      grid-auto-rows: 360px;
-      gap: 2px;
-      padding: 2px;
-    }
-
-    .bottom {
-      padding: 50px 14px;
-
-      .bottomTitle {
-        font-size: 24px;
-      }
-    }
-  }
-}
-
-/* ================= 375 ================= */
 
 @media (max-width: 375px) {
   .lookbook {
     .hero {
-      padding: 35px 12px 25px;
-
-      .label {
-        font-size: 8px;
-        letter-spacing: 3px;
-      }
-
-      .title {
-        font-size: 24px;
-      }
-
-      .subtitle {
-        font-size: 8px;
-        letter-spacing: 2px;
-      }
+      padding: 40px 12px 25px;
     }
 
-    .grid {
-      grid-auto-rows: 320px;
-
-      .item {
-        .imgWrap {
-          .overlay {
-            padding: 14px;
-
-            .lookTitle {
-              font-size: 12px;
-            }
-
-            .lookSubtitle {
-              font-size: 6px;
-              letter-spacing: 3px;
-            }
-          }
-
-          .placeholder {
-            .placeholderText {
-              font-size: 12px;
-              letter-spacing: 5px;
-            }
-          }
-        }
-      }
+    .title {
+      font-size: 24px;
     }
 
-    .bottom {
-      padding: 45px 12px;
+    .overlay {
+      padding: 14px;
+    }
 
-      .bottomLabel {
-        font-size: 8px;
-        letter-spacing: 4px;
-      }
-
-      .bottomTitle {
-        font-size: 22px;
-      }
+    .lookTitle {
+      font-size: 14px;
     }
   }
 }
